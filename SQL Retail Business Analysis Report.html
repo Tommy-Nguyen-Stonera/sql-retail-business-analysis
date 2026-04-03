@@ -359,14 +359,6 @@
 
 <!-- Progress bar -->
 <div id="progress-bar"></div>
-<div style="max-width:900px;margin:20px auto;padding:20px 30px;background:#f0f4f8;border-radius:8px;text-align:center;">
-    <h3 style="color:#0f3460;margin-bottom:12px;font-size:1rem;">Download Dataset</h3>
-    <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/CUSTOMER.csv" download style="display:inline-block;margin:5px 10px;padding:8px 20px;background:#0f3460;color:white;border-radius:4px;text-decoration:none;font-size:0.85rem;">CUSTOMER.csv</a>
-    <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/EMPLOYEES.csv" download style="display:inline-block;margin:5px 10px;padding:8px 20px;background:#0f3460;color:white;border-radius:4px;text-decoration:none;font-size:0.85rem;">EMPLOYEES.csv</a>
-    <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/ORDERS.csv" download style="display:inline-block;margin:5px 10px;padding:8px 20px;background:#0f3460;color:white;border-radius:4px;text-decoration:none;font-size:0.85rem;">ORDERS.csv</a>
-    <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/PRODUCT.csv" download style="display:inline-block;margin:5px 10px;padding:8px 20px;background:#0f3460;color:white;border-radius:4px;text-decoration:none;font-size:0.85rem;">PRODUCT.csv</a>
-</div>
-
 
 <!-- TOC Sidebar -->
 <nav id="toc" aria-label="Sections">
@@ -412,19 +404,19 @@
   <div class="guide-box reveal">
     <div class="guide-title">How to use this report</div>
     <p>Each section opens with a <em>Research Question</em> — the business question that motivated the analysis. A <strong>SQL Query</strong> badge indicates which query in the file produces the supporting result.</p>
-    <p style="margin-top:8px;margin-bottom:0;">&#128196; Source data files: <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/CUSTOMER.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">CUSTOMER.csv</a> &nbsp;&mdash;&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/ORDERS.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">ORDERS.csv</a> &nbsp;&mdash;&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/PRODUCT.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">PRODUCT.csv</a> &nbsp;&mdash;&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/EMPLOYEES.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">EMPLOYEES.csv</a></p>
+    <p style="margin-top:8px;margin-bottom:0;">&#128196; Source data files: <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/CUSTOMER.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">CUSTOMER.csv</a> &nbsp;-&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/ORDERS.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">ORDERS.csv</a> &nbsp;-&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/PRODUCT.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">PRODUCT.csv</a> &nbsp;-&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/EMPLOYEES.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">EMPLOYEES.csv</a></p>
     <p style="margin-top:6px;margin-bottom:0;">&#11015; Full SQL query file: <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/queries/SQL%20Retail%20Business%20Analysis.sql" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">SQL Retail Business Analysis.sql</a></p>
   </div>
 
   <!-- Section 1 -->
-  <h2 id="sec1" class="reveal">Section 1 &mdash; Furniture Category Sales Trend</h2>
+  <h2 id="sec1" class="reveal">Section 1 - Furniture Category Sales Trend</h2>
 
   <div class="research-q reveal">
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
       <div class="rq-text">How did Furniture category revenue trend across quarters from 2014 to 2016, and which period delivered the strongest quarter-over-quarter growth?</div>
-      <span class="sql-ref">&#9656; SQL Query 1 &mdash; Quarterly Aggregation with DATEPART</span>
+      <span class="sql-ref">&#9656; SQL Query 1 - Quarterly Aggregation with DATEPART</span>
     </div>
   </div>
 
@@ -448,14 +440,14 @@
   </div>
 
   <!-- Section 2 -->
-  <h2 id="sec2" class="page-break reveal">Section 2 &mdash; Discount Impact on Profitability</h2>
+  <h2 id="sec2" class="page-break reveal">Section 2 - Discount Impact on Profitability</h2>
 
   <div class="research-q reveal">
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
       <div class="rq-text">How does discount depth affect profitability across product categories, and at what discount tier does the business shift from profit to loss?</div>
-      <span class="sql-ref">&#9656; SQL Query 2 &mdash; CTE with CASE Discount Classification</span>
+      <span class="sql-ref">&#9656; SQL Query 2 - CTE with CASE Discount Classification</span>
     </div>
   </div>
 
@@ -487,14 +479,14 @@
   </div>
 
   <!-- Section 3 -->
-  <h2 id="sec3" class="page-break reveal">Section 3 &mdash; Top Categories by Customer Segment</h2>
+  <h2 id="sec3" class="page-break reveal">Section 3 - Top Categories by Customer Segment</h2>
 
   <div class="research-q reveal">
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
       <div class="rq-text">Which product categories drive the most revenue and profit within each customer segment, and does the highest-selling category always yield the highest profit margin?</div>
-      <span class="sql-ref">&#9656; SQL Query 3 &mdash; Window Functions RANK() OVER PARTITION BY</span>
+      <span class="sql-ref">&#9656; SQL Query 3 - Window Functions RANK() OVER PARTITION BY</span>
     </div>
   </div>
 
@@ -534,14 +526,14 @@
   </div>
 
   <!-- Section 4 -->
-  <h2 id="sec4" class="page-break reveal">Section 4 &mdash; Employee Profit Distribution by Category</h2>
+  <h2 id="sec4" class="page-break reveal">Section 4 - Employee Profit Distribution by Category</h2>
 
   <div class="research-q reveal">
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
       <div class="rq-text">How is each sales employee's profit distributed across product categories, and which employees are over-reliant on a single category for the majority of their total profit?</div>
-      <span class="sql-ref">&#9656; SQL Query 4 &mdash; Multi-level CTE with Profit Percentage Calculation</span>
+      <span class="sql-ref">&#9656; SQL Query 4 - Multi-level CTE with Profit Percentage Calculation</span>
     </div>
   </div>
 
@@ -565,14 +557,14 @@
   </div>
 
   <!-- Section 5 -->
-  <h2 id="sec5" class="page-break reveal">Section 5 &mdash; Profitability Ratio Analysis (UDF)</h2>
+  <h2 id="sec5" class="page-break reveal">Section 5 - Profitability Ratio Analysis (UDF)</h2>
 
   <div class="research-q reveal">
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
       <div class="rq-text">Which product categories deliver the highest profit-per-dollar-of-sales for each employee, and where should the business redirect its sales focus to maximise margin efficiency?</div>
-      <span class="sql-ref">&#9656; SQL Query 5 &mdash; User-Defined Scalar Function (UDF)</span>
+      <span class="sql-ref">&#9656; SQL Query 5 - User-Defined Scalar Function (UDF)</span>
     </div>
   </div>
 
@@ -606,14 +598,14 @@
   </div>
 
   <!-- Section 6 -->
-  <h2 id="sec6" class="page-break reveal">Section 6 &mdash; Employee Performance Query Tool (Stored Procedure)</h2>
+  <h2 id="sec6" class="page-break reveal">Section 6 - Employee Performance Query Tool (Stored Procedure)</h2>
 
   <div class="research-q reveal">
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
       <div class="rq-text">How can management efficiently query any employee's total sales and profit for any custom time window — enabling on-demand performance reviews without requiring ad-hoc SQL knowledge?</div>
-      <span class="sql-ref">&#9656; SQL Query 6 &mdash; Parameterised Stored Procedure</span>
+      <span class="sql-ref">&#9656; SQL Query 6 - Parameterised Stored Procedure</span>
     </div>
   </div>
 
@@ -647,14 +639,14 @@
   </div>
 
   <!-- Section 7 -->
-  <h2 id="sec7" class="page-break reveal">Section 7 &mdash; Regional Profit Pivot &mdash; State &times; Quarter</h2>
+  <h2 id="sec7" class="page-break reveal">Section 7 - Regional Profit Pivot - State &times; Quarter</h2>
 
   <div class="research-q reveal">
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
       <div class="rq-text">How did profit performance vary across US states over the last six quarters of the dataset, and which states show consistent growth versus persistent decline?</div>
-      <span class="sql-ref">&#9656; SQL Query 7 &mdash; Dynamic SQL with STRING_AGG and PIVOT</span>
+      <span class="sql-ref">&#9656; SQL Query 7 - Dynamic SQL with STRING_AGG and PIVOT</span>
     </div>
   </div>
 
@@ -694,7 +686,7 @@
   </div>
 
   <div class="footer">
-    SQL Retail Business Analysis Report &nbsp;|&nbsp; Based on 2014&ndash;2016 US retail transaction data &nbsp;|&nbsp; SQL Server &middot; T-SQL
+    SQL Retail Business Analysis Report &nbsp;|&nbsp; Based on 2014&ndash;2016 US retail transaction data &nbsp;|&nbsp; SQL Server , T-SQL
   </div>
 
 </div>
@@ -747,9 +739,6 @@
     });
   });
 </script>
-
-
-
 
 </body>
 </html>
