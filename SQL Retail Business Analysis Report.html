@@ -403,7 +403,7 @@
   <!-- How to read this report -->
   <div class="guide-box reveal">
     <div class="guide-title">How to use this report</div>
-    <p>Each section opens with a <em>Research Question</em> — the business question that motivated the analysis. A <strong>SQL Query</strong> badge indicates which query in the file produces the supporting result.</p>
+    <p>Each section opens with a <em>Research Question</em>, which is the business question that motivated the analysis. A <strong>SQL Query</strong> badge indicates which query in the file produces the supporting result.</p>
     <p style="margin-top:8px;margin-bottom:0;">&#128196; Source data files: <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/CUSTOMER.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">CUSTOMER.csv</a> &nbsp;-&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/ORDERS.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">ORDERS.csv</a> &nbsp;-&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/PRODUCT.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">PRODUCT.csv</a> &nbsp;-&nbsp; <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/data/EMPLOYEES.csv" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">EMPLOYEES.csv</a></p>
     <p style="margin-top:6px;margin-bottom:0;">&#11015; Full SQL query file: <a href="https://github.com/Tommy-Nguyen-Stonera/sql-retail-business-analysis/raw/main/queries/SQL%20Retail%20Business%20Analysis.sql" style="color:#1A3A6B;font-weight:600;text-decoration:underline;">SQL Retail Business Analysis.sql</a></p>
   </div>
@@ -426,7 +426,7 @@
 
   <h3 class="reveal">Approach</h3>
   <p>
-    The <code>ORDERS</code> table is joined to the <code>PRODUCT</code> table to isolate Furniture transactions. A <code>CONCAT</code> label (e.g., <em>Q3-2016</em>) is generated for readability, and results are ordered chronologically by year then quarter — ensuring the output reads as a clean time series rather than alphabetical label order.
+    The <code>ORDERS</code> table is joined to the <code>PRODUCT</code> table to isolate Furniture transactions. A <code>CONCAT</code> label (e.g., <em>Q3-2016</em>) is generated for readability, and results are ordered chronologically by year then quarter, ensuring the output reads as a clean time series rather than alphabetical label order.
   </p>
 
   <div class="finding reveal">
@@ -452,20 +452,20 @@
   </div>
 
   <p>
-    Discounts are classified into four tiers using a <code>CASE</code> expression inside a CTE: <strong>No Discount</strong> (0%), <strong>Low</strong> (&le;20%), <strong>Medium</strong> (&le;50%), and <strong>High</strong> (&gt;50%). The outer query then aggregates order count, total sales, and total profit by product category and discount tier — enabling a direct comparison of profitability across discount strategies.
+    Discounts are classified into four tiers using a <code>CASE</code> expression inside a CTE: <strong>No Discount</strong> (0%), <strong>Low</strong> (&le;20%), <strong>Medium</strong> (&le;50%), and <strong>High</strong> (&gt;50%). The outer query then aggregates order count, total sales, and total profit by product category and discount tier, enabling a direct comparison of profitability across discount strategies.
   </p>
 
   <h3 class="reveal">Discount Tier Definitions</h3>
   <ul>
-    <li><span class="highlight">No Discount</span> — Full-price orders (DISCOUNT = 0)</li>
-    <li><span class="highlight">Low Discount</span> — 1% to 20% off</li>
-    <li><span class="highlight">Medium Discount</span> — 21% to 50% off</li>
-    <li><span class="highlight">High Discount</span> — Greater than 50% off</li>
+    <li><span class="highlight">No Discount</span>: Full-price orders (DISCOUNT = 0)</li>
+    <li><span class="highlight">Low Discount</span>: 1% to 20% off</li>
+    <li><span class="highlight">Medium Discount</span>: 21% to 50% off</li>
+    <li><span class="highlight">High Discount</span>: Greater than 50% off</li>
   </ul>
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    High-discount orders (&gt;50%) consistently generate negative total profit across all three product categories — Furniture, Office Supplies, and Technology. The business is selling at a loss on every heavily discounted transaction, meaning the volume gain from high discounts does not offset the margin destruction.
+    High-discount orders (&gt;50%) consistently generate negative total profit across all three product categories: Furniture, Office Supplies, and Technology. The business is selling at a loss on every heavily discounted transaction, meaning the volume gain from high discounts does not offset the margin destruction.
   </div>
 
   <div class="finding reveal">
@@ -475,7 +475,7 @@
 
   <div class="finding reveal">
     <div class="label">Business Implication</div>
-    The current high-discount strategy is commercially destructive. A discount cap policy — limiting promotions to a maximum of 20&ndash;30% — would preserve margin while still providing competitive pricing. High-discount orders should be reviewed for whether they represent strategic account investments or simply unchecked promotional activity.
+    The current high-discount strategy is commercially destructive. A discount cap policy, limiting promotions to a maximum of 20&ndash;30%, would preserve margin while still providing competitive pricing. High-discount orders should be reviewed for whether they represent strategic account investments or simply unchecked promotional activity.
   </div>
 
   <!-- Section 3 -->
@@ -491,7 +491,7 @@
   </div>
 
   <p>
-    This query uses two independent <code>RANK()</code> window functions, each partitioned by <code>CustomerSegment</code>: one ranking by total sales descending, and one by total profit descending. The result is filtered to show only the top 2 categories by profit rank per segment — revealing whether the volume leader and the profit leader are the same category within each customer group.
+    This query uses two independent <code>RANK()</code> window functions, each partitioned by <code>CustomerSegment</code>: one ranking by total sales descending, and one by total profit descending. The result is filtered to show only the top 2 categories by profit rank per segment, revealing whether the volume leader and the profit leader are the same category within each customer group.
   </p>
 
   <h3 class="reveal">Customer Segments Analysed</h3>
@@ -512,12 +512,12 @@
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    <strong>Technology</strong> ranks as the top profit-generating category for both the Consumer and Corporate segments — driven by higher unit prices and more resilient margins compared to Furniture. <strong>Office Supplies</strong> leads for the Home Office segment, where smaller, frequent purchases accumulate to strong cumulative profit.
+    <strong>Technology</strong> ranks as the top profit-generating category for both the Consumer and Corporate segments, driven by higher unit prices and more resilient margins compared to Furniture. <strong>Office Supplies</strong> leads for the Home Office segment, where smaller, frequent purchases accumulate to strong cumulative profit.
   </div>
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    Sales rank and profit rank do not always align. In several segments, the highest-revenue category is not the most profitable — a critical distinction for resource allocation. Focusing sales activity on high-revenue categories without considering margin can inflate top-line numbers while eroding profitability.
+    Sales rank and profit rank do not always align. In several segments, the highest-revenue category is not the most profitable, which is a critical distinction for resource allocation. Focusing sales activity on high-revenue categories without considering margin can inflate top-line numbers while eroding profitability.
   </div>
 
   <div class="finding reveal">
@@ -538,12 +538,12 @@
   </div>
 
   <p>
-    This query uses a three-stage CTE structure. The first CTE (<code>EmployeeCategoryTotals</code>) aggregates profit by employee and category. The second (<code>EmployeeTotals</code>) sums each employee's overall profit. The final CTE computes <code>CategoryProfit / EmployeeTotalProfit</code> as a profit contribution percentage, formatted using <code>FORMAT()</code> for clean output. Results are ordered by employee, then by profit percentage descending — so each employee's strongest category appears first.
+    This query uses a three-stage CTE structure. The first CTE (<code>EmployeeCategoryTotals</code>) aggregates profit by employee and category. The second (<code>EmployeeTotals</code>) sums each employee's overall profit. The final CTE computes <code>CategoryProfit / EmployeeTotalProfit</code> as a profit contribution percentage, formatted using <code>FORMAT()</code> for clean output. Results are ordered by employee, then by profit percentage descending, so each employee's strongest category appears first.
   </p>
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    The majority of employees generate 60&ndash;80% of their total profit from a single product category. This concentration risk means that a downturn in one category — through seasonal demand shifts, competitor pricing, or supply issues — could disproportionately impact individual employee performance and the business's aggregate profit.
+    The majority of employees generate 60&ndash;80% of their total profit from a single product category. This concentration risk means that a downturn in one category - through seasonal demand shifts, competitor pricing, or supply issues - could disproportionately impact individual employee performance and the business's aggregate profit.
   </div>
 
   <div class="finding reveal">
@@ -569,7 +569,7 @@
   </div>
 
   <p>
-    A scalar user-defined function <code>dbo.fnProfitabilityRatio(@Profit, @Sales)</code> is created to encapsulate the profit margin calculation: <code>ROUND(@Profit / @Sales, 2)</code>. The function handles edge cases where <code>@Sales</code> is <code>NULL</code> or zero by returning 0, preventing division errors. The UDF is then applied in a report query that ranks each employee's product categories by their profitability ratio — the profit earned per dollar of revenue generated.
+    A scalar user-defined function <code>dbo.fnProfitabilityRatio(@Profit, @Sales)</code> is created to encapsulate the profit margin calculation: <code>ROUND(@Profit / @Sales, 2)</code>. The function handles edge cases where <code>@Sales</code> is <code>NULL</code> or zero by returning 0, preventing division errors. The UDF is then applied in a report query that ranks each employee's product categories by their profitability ratio, which is the profit earned per dollar of revenue generated.
   </p>
 
   <h3 class="reveal">Function Signature</h3>
@@ -584,17 +584,17 @@
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    <strong>Technology</strong> consistently achieves the highest profitability ratio across most employees — meaning more profit is generated per dollar of Technology revenue than for Furniture or Office Supplies. This is driven by fewer discount incidents and higher absolute unit margins in the Technology category.
+    <strong>Technology</strong> consistently achieves the highest profitability ratio across most employees, meaning more profit is generated per dollar of Technology revenue than for Furniture or Office Supplies. This is driven by fewer discount incidents and higher absolute unit margins in the Technology category.
   </div>
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    <strong>Furniture</strong> records the lowest profitability ratios for most employees — and in some cases, a negative ratio — confirming that discount abuse in this category is not just reducing profit but actively destroying it on a per-revenue basis.
+    <strong>Furniture</strong> records the lowest profitability ratios for most employees, and in some cases a negative ratio, confirming that discount abuse in this category is not just reducing profit but actively destroying it on a per-revenue basis.
   </div>
 
   <div class="finding reveal">
     <div class="label">Business Implication</div>
-    Encapsulating business logic in a UDF makes the profitability calculation reusable and consistent across the entire database. Any future report requiring margin analysis can invoke <code>dbo.fnProfitabilityRatio()</code> without reimplementing the division logic — reducing errors and ensuring a single definition of "profitability ratio" across all reports.
+    Encapsulating business logic in a UDF makes the profitability calculation reusable and consistent across the entire database. Any future report requiring margin analysis can invoke <code>dbo.fnProfitabilityRatio()</code> without reimplementing the division logic, reducing errors and ensuring a single definition of "profitability ratio" across all reports.
   </div>
 
   <!-- Section 6 -->
@@ -604,13 +604,13 @@
     <div class="rq-icon">?</div>
     <div class="rq-body">
       <div class="rq-label">Research Question</div>
-      <div class="rq-text">How can management efficiently query any employee's total sales and profit for any custom time window — enabling on-demand performance reviews without requiring ad-hoc SQL knowledge?</div>
+      <div class="rq-text">How can management efficiently query any employee's total sales and profit for any custom time window, for on-demand performance reviews without requiring ad-hoc SQL knowledge?</div>
       <span class="sql-ref">&#9656; SQL Query 6 - Parameterised Stored Procedure</span>
     </div>
   </div>
 
   <p>
-    The stored procedure <code>dbo.GetEmployeeSalesProfit</code> accepts three parameters — <code>@EmployeeID</code>, <code>@StartDate</code>, and <code>@EndDate</code> — and returns the employee's name, total sales, and total profit for the specified period. The procedure uses <code>SET NOCOUNT ON</code> for clean output and applies <code>FORMAT()</code> for human-readable number formatting.
+    The stored procedure <code>dbo.GetEmployeeSalesProfit</code> accepts three parameters (<code>@EmployeeID</code>, <code>@StartDate</code>, and <code>@EndDate</code>) and returns the employee's name, total sales, and total profit for the specified period. The procedure uses <code>SET NOCOUNT ON</code> for clean output and applies <code>FORMAT()</code> for human-readable number formatting.
   </p>
 
   <h3 class="reveal">Procedure Parameters</h3>
@@ -625,12 +625,12 @@
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    Parameterised stored procedures are a significant operational upgrade over ad-hoc queries. By abstracting the logic into a callable procedure, any business user with <code>EXECUTE</code> permission can retrieve employee performance data without writing SQL — enabling self-service reporting for sales managers, HR, and finance teams.
+    Parameterised stored procedures are a significant operational upgrade over ad-hoc queries. By abstracting the logic into a callable procedure, any business user with <code>EXECUTE</code> permission can retrieve employee performance data without writing SQL, enabling self-service reporting for sales managers, HR, and finance teams.
   </div>
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    The date-range parameter design allows flexible use: the same procedure supports weekly review calls (7-day window), monthly performance reviews, quarterly assessments, and annual appraisals — all with a single <code>EXEC</code> call, no query modification required.
+    The date-range parameter design allows flexible use: the same procedure supports weekly review calls (7-day window), monthly performance reviews, quarterly assessments, and annual appraisals, all with a single <code>EXEC</code> call and no query modification required.
   </div>
 
   <div class="finding reveal">
@@ -651,7 +651,7 @@
   </div>
 
   <p>
-    This query uses dynamic SQL to build a pivot table where rows are US states and columns are the six most recent quarters in the data. Because the quarter column names are data-driven (not fixed), the column list cannot be hardcoded — instead, <code>STRING_AGG(QUOTENAME(QuarterLabel), ',')</code> assembles the column list dynamically from the top 6 distinct quarters ordered by recency. The pivot SQL string is then executed via <code>EXEC sp_executesql @sql</code>.
+    This query uses dynamic SQL to build a pivot table where rows are US states and columns are the six most recent quarters in the data. Because the quarter column names are data-driven (not fixed), the column list cannot be hardcoded. Instead, <code>STRING_AGG(QUOTENAME(QuarterLabel), ',')</code> assembles the column list dynamically from the top 6 distinct quarters ordered by recency. The pivot SQL string is then executed via <code>EXEC sp_executesql @sql</code>.
   </p>
 
   <h3 class="reveal">Dynamic Column Generation</h3>
@@ -667,12 +667,12 @@
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    State-level profit is highly concentrated. A small number of high-population states — led by California, New York, and Texas — account for the majority of total profit across all six quarters. These states represent the business's core revenue geography and should receive disproportionate sales and marketing investment.
+    State-level profit is highly concentrated. A small number of high-population states, led by California, New York, and Texas, account for the majority of total profit across all six quarters. These states represent the business's core revenue geography and should receive disproportionate sales and marketing investment.
   </div>
 
   <div class="finding reveal">
     <div class="label">Key Insight</div>
-    Several smaller states show quarter-on-quarter profit volatility — swinging between positive and negative within the six-quarter window. This is typical of low-order-volume geographies where a single large discounted order can flip a quarter's profit negative. These states may benefit from minimum-order or minimum-margin guardrails to stabilise profitability.
+    Several smaller states show quarter-on-quarter profit volatility, swinging between positive and negative within the six-quarter window. This is typical of low-order-volume geographies where a single large discounted order can flip a quarter's profit negative. These states may benefit from minimum-order or minimum-margin guardrails to stabilise profitability.
   </div>
 
   <div class="finding reveal">
@@ -682,7 +682,7 @@
 
   <div class="finding reveal">
     <div class="label">Business Implication</div>
-    The state &times; quarter pivot output is directly exportable to Excel or Power BI for geographic heat-map visualisation. Overlaying this data with regional sales headcount would reveal whether profit concentration mirrors employee deployment — or whether some regions are under-resourced relative to their revenue potential.
+    The state &times; quarter pivot output is directly exportable to Excel or Power BI for geographic heat-map visualisation. Overlaying this data with regional sales headcount would reveal whether profit concentration mirrors employee deployment, or whether some regions are under-resourced relative to their revenue potential.
   </div>
 
   <div class="footer">

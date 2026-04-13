@@ -223,7 +223,7 @@ ORDER BY
 -- QUERY 6: Employee Performance Query Tool
 /*
 How can management efficiently query any employee's sales and profit for any custom time window
-— enabling on-demand performance reviews?
+for on-demand performance reviews?
 */
 
 -- Set up stored procedure
@@ -258,7 +258,7 @@ EXEC dbo.GetEmployeeSalesProfit
     @EndDate = '2016-12-31';
 
 
--- QUERY 7: Regional Profit Pivot — State × Quarter
+-- QUERY 7: Regional Profit Pivot - State x Quarter
 /*
 How did profit performance vary across US states over the last 6 quarters,
 and which states show consistent growth vs. decline?
